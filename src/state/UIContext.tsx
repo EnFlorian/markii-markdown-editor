@@ -14,7 +14,7 @@ const UIContext = createContext<IUIContext>({
   setIsSidebarOpen: () => {},
 });
 
-export const UiProvider = ({ children }: IProps) => {
+export const UIProvider = ({ children }: IProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const setIsLoading = (isLoading: boolean) => {
