@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --navbar-height: 50px;
+  --footer-height: 50px;
+  --sidebar-width: 280px;
+  --transition: all 0.2s ease-in-out;
+
+  --clr-dark: hsl(0, 15%, 15%);
+  --clr-medium: hsl(0, 15%, 25%);
+  --clr-light: hsl(26, 60%, 60%);
+  --clr-lighter: hsl(33, 100%, 95%);
+  --clr-neutral: hsl(0, 0%, 100%);
+
+  --clr-text-dark: hsl(0, 0%, 8%);
+  --clr-text-medium: hsl(0, 0%, 15%);
+  --clr-text-light: hsl(0, 0%, 90%);
+
+  --clr-danger-dark: hsl(0, 100%, 30%);
+  --clr-danger-medium: hsl(0, 100%, 70%);
+  --clr-danger-light: hsl(0, 100%, 90%);
+
+  --clr-footer: var(--clr-dark);
+  --clr-navbar: var(--clr-dark);
+
+  --clr-accent-dark: hsl(205, 61%, 65%);
+  --clr-accent-medium: hsl(205, 61%, 70%);
+  --clr-accent-light: hsl(205, 61%, 95%);
+
+  --toastify-color-dark: hsl(0, 0%, 14%);
+  --toastify-color-success: var(--clr-accent);
+}
+
+/* Scrollbar */
+/* Width */
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--clr-lighter);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--clr-dark);
+  height: 2rem;
+  /* border-radius: 1rem; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: calc(100% - 2rem);
+    margin: 0 1rem;
+  }
+}
