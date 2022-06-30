@@ -1,8 +1,12 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { Home } from "./pages";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <React.Fragment>
+      <Home />
+    </React.Fragment>
+  );
 }
 
 export default App;
