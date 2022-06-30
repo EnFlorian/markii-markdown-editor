@@ -20,11 +20,6 @@ const reducer = (state: IFilesState, action: FilesActionType) => {
         ...state,
         isLoading: action.payload,
       };
-    case "SAVE_FILE":
-      return {
-        ...state,
-        files: state.files.map((file) => (file.id === action.payload.id ? action.payload : file)),
-      };
     case "DOWNLOAD_FILE":
       return {
         ...state,

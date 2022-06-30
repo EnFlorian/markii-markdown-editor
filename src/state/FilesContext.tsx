@@ -13,7 +13,6 @@ const FilesContext = createContext<IFilesContext>({
   removeFile: () => {},
   setIsLoading: () => {},
   setOpenFile: () => {},
-  saveFile: () => {},
   downloadFile: () => {},
 });
 
@@ -36,10 +35,6 @@ export const FilesProvider = ({ children }: IProps) => {
     dispatch({ type: "SET_OPEN_FILE", payload: file });
   };
 
-  const saveFile = (file: IFile) => {
-    dispatch({ type: "SAVE_FILE", payload: file });
-  };
-
   const downloadFile = (file: IFile) => {
     dispatch({ type: "DOWNLOAD_FILE", payload: file });
   };
@@ -52,7 +47,6 @@ export const FilesProvider = ({ children }: IProps) => {
         removeFile,
         setIsLoading,
         setOpenFile,
-        saveFile,
         downloadFile,
       }}
     >
