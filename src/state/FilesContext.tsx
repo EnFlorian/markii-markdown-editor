@@ -1,48 +1,66 @@
 import { createContext, useContext, useReducer } from "react";
 import reducer from "./reducers/FilesReducer";
 
-const initialState: IUIState = {
+const initialState: IFilesState = {
+  files: [],
   isLoading: false,
-  isDarkMode: false,
-  isSidebarOpen: false,
+  openFile: null,
 };
 
-const UIContext = createContext<IUIContext>({
+const FilesContext = createContext<IFilesContext>({
   ...initialState,
+  addFile: () => {},
+  removeFile: () => {},
   setIsLoading: () => {},
-  setIsDarkMode: () => {},
-  setIsSidebarOpen: () => {},
+  setOpenFile: () => {},
+  saveFile: () => {},
+  downloadFile: () => {},
 });
 
-export const UIProvider = ({ children }: IProps) => {
+export const FilesProvider = ({ children }: IProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const addFile = (file: IFile) => {
+    dispatch({ type: "ADD_FILE", payload: file });
+  };
+
+  const removeFile = (file: IFile) => {
+    dispatch({ type: "REMOVE_FILE", payload: file });
+  };
 
   const setIsLoading = (isLoading: boolean) => {
     dispatch({ type: "SET_IS_LOADING", payload: isLoading });
   };
 
-  const setIsDarkMode = (isDarkMode: boolean) => {
-    dispatch({ type: "SET_IS_DARK_MODE", payload: isDarkMode });
+  const setOpenFile = (file: IFile) => {
+    dispatch({ type: "SET_OPEN_FILE", payload: file });
   };
 
-  const setIsSidebarOpen = (isSidebarOpen: boolean) => {
-    dispatch({ type: "SET_IS_SIDEBAR_OPEN", payload: isSidebarOpen });
+  const saveFile = (file: IFile) => {
+    dispatch({ type: "SAVE_FILE", payload: file });
+  };
+
+  const downloadFile = (file: IFile) => {
+    dispatch({ type: "DOWNLOAD_FILE", payload: file });
   };
 
   return (
-    <UIContext.Provider
+    <FilesContext.Provider
       value={{
         ...state,
+        addFile,
+        removeFile,
         setIsLoading,
-        setIsDarkMode,
-        setIsSidebarOpen,
+        setOpenFile,
+        saveFile,
+        downloadFile,
       }}
     >
       {children}
-    </UIContext.Provider>
+    </FilesContext.Provider>
   );
 };
 
-export const useUIContext = () => {
-  return useContext(UIContext);
+export const useFilesContext = () => {
+  return useContext(FilesContext);
 };
