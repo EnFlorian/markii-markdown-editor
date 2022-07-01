@@ -6,19 +6,19 @@ import { useState } from "react";
 import { useUIContext } from "../../state/UIContext";
 
 const Navbar = () => {
-  const { openFile, addFile } = useFilesContext();
+  const { setOpenFile, openFile, addFile } = useFilesContext();
   const { isSidebarOpen, setIsSidebarOpen } = useUIContext();
   const [fileName, setFileName] = useState("Untitled");
 
   const handleFileNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!openFile) return;
-    setFileName(e.target.value);
-    openFile.name = e.target.value;
+    const file = { ...openFile, name: e.target.value };
+    setOpenFile(file);
   };
 
   const handleFileSave = () => {
     if (!openFile) return;
     addFile(openFile);
+    console.log("File saved");
   };
 
   const handleSidebarToggle = () => {
@@ -33,13 +33,13 @@ const Navbar = () => {
         </button>
         <h1 className="header__title">MARKDOWN</h1>
         <form className="header__file-form">
-          <span className="header__file-icon">
-            <AiOutlineFile />
-          </span>
+          <AiOutlineFile className="header__file-icon" />
           <div className="header__file-container">
-            <label htmlFor="file">Document Name</label>
+            <label className="header__file-label" htmlFor="file">
+              Document Name
+            </label>
             <input
-              value={fileName}
+              value={openFile.name}
               onChange={(e) => handleFileNameChange(e)}
               className="header__file-input"
               type="text"

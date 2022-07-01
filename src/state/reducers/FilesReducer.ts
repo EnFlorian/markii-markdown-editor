@@ -25,11 +25,6 @@ const reducer = (state: IFilesState, action: FilesActionType) => {
         ...state,
         files: state.files.map((file) => (file.id === action.payload.id ? action.payload : file)),
       };
-    case "CHANGE_FILE":
-      return {
-        ...state,
-        files: state.files.map((file) => (file.id === action.payload.id ? action.payload : file)),
-      };
 
     default:
       return state;

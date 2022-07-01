@@ -31,8 +31,48 @@
     text-transform: uppercase;
     font-weight: 300;
     color: var(--clr-text-1);
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     margin-left: 1rem;
+    border-right: 1px solid var(--clr-text-3);
+    margin-right: 2rem;
+  }
+
+  &__file-form {
+    display: flex;
+    align-items: center;
+  }
+
+  &__file-icon {
+    color: var(--clr-text-1);
+    font-size: 1.7rem;
+    margin-right: 0.6rem;
+  }
+
+  &__file-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__file-label {
+    font-size: 0.8rem;
+    color: var(--clr-text-3);
+  }
+
+  &__file-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--clr-text-1);
+    font-size: 1.05rem;
+
+    &:focus {
+      border-bottom: 1px solid var(--clr-text-3);
+    }
+
+    &::placeholder {
+      font-size: 1rem;
+    }
   }
 
   &__right-content {

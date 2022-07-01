@@ -32,7 +32,7 @@ interface IFile {
 interface IFilesState {
   files: IFile[];
   isLoading: boolean;
-  openFile: IFile | null;
+  openFile: IFile;
 }
 
 interface IFilesContext extends IFilesState {
@@ -41,7 +41,6 @@ interface IFilesContext extends IFilesState {
   setOpenFile: (file: IFile) => void;
   setIsLoading: (isLoading: boolean) => void;
   downloadFile: (file: IFile) => void;
-  changeFile: (file: IFile) => void;
 }
 
 type FilesActionType =
@@ -49,5 +48,4 @@ type FilesActionType =
   | { type: "REMOVE_FILE"; payload: IFile }
   | { type: "SET_OPEN_FILE"; payload: IFile }
   | { type: "SET_IS_LOADING"; payload: boolean }
-  | { type: "DOWNLOAD_FILE"; payload: IFile }
-  | { type: "CHANGE_FILE"; payload: IFile };
+  | { type: "DOWNLOAD_FILE"; payload: IFile };

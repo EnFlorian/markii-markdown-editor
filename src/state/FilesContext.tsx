@@ -20,7 +20,6 @@ const FilesContext = createContext<IFilesContext>({
   setIsLoading: () => {},
   setOpenFile: () => {},
   downloadFile: () => {},
-  changeFile: () => {},
 });
 
 export const FilesProvider = ({ children }: IProps) => {
@@ -46,10 +45,6 @@ export const FilesProvider = ({ children }: IProps) => {
     dispatch({ type: "DOWNLOAD_FILE", payload: file });
   };
 
-  const changeFile = (file: IFile) => {
-    dispatch({ type: "CHANGE_FILE", payload: file });
-  };
-
   return (
     <FilesContext.Provider
       value={{
@@ -59,7 +54,6 @@ export const FilesProvider = ({ children }: IProps) => {
         setIsLoading,
         setOpenFile,
         downloadFile,
-        changeFile,
       }}
     >
       {children}
