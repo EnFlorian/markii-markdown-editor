@@ -35,6 +35,33 @@
   --toastify-color-success: var(--clr-accent);
 }
 
+html[data-theme="light"] {
+  --clr-1: red;
+  --clr-2: hsl(228, 8%, 13%);
+  --clr-3: hsl(231, 8%, 18%);
+  --clr-4: hsl(232, 7%, 23%);
+
+  --clr-neutral: hsl(0, 0%, 100%);
+
+  --clr-text-1: hsl(0, 0%, 100%);
+  --clr-text-2: hsl(0, 0%, 80%);
+  --clr-text-3: hsl(0, 0%, 60%);
+  --clr-text-4: hsl(0, 0%, 40%);
+  --clr-text-neutral: hsl(0, 0%, 100%);
+
+  --clr-danger-1: hsl(0, 100%, 30%);
+  --clr-danger-2: hsl(0, 100%, 70%);
+  --clr-danger-3: hsl(0, 100%, 90%);
+
+  //clr tangerine
+  --clr-accent-1: hsl(25, 65%, 51%);
+  --clr-accent-2: hsl(25, 100%, 70%);
+  --clr-accent-3: hsl(25, 100%, 90%);
+
+  --toastify-color-dark: hsl(0, 0%, 14%);
+  --toastify-color-success: var(--clr-accent);
+}
+
 /* Scrollbar */
 /* Width */
 ::-webkit-scrollbar {

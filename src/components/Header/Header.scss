@@ -23,6 +23,7 @@
     color: var(--clr-text-1);
     outline: none;
     cursor: pointer;
+    transition: var(--transition-fast);
   }
 
   &__title {
@@ -84,6 +85,13 @@
     font-size: 1.5rem;
     color: var(--clr-text-1);
     margin-right: 1rem;
+    transition: var(--transition-fast);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--clr-danger-1);
+      transform: scale(1.1);
+    }
   }
 
   &__save-button {
@@ -96,5 +104,11 @@
     outline: none;
     cursor: pointer;
     margin-right: 1rem;
+    transition: var(--transition-fast);
+
+    &:hover {
+      background-color: var(--clr-accent-2);
+      transform: scale(1.01);
+    }
   }
 }

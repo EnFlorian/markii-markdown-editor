@@ -1,0 +1,20 @@
+.theme-switch {
+  outline: none;
+  background-color: transparent;
+  padding: 0.3rem 0rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--clr-text-1);
+  transition: var(--transition-fast);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--clr-accent-1);
+  }
+
+  &__mode {
+    margin-left: 0.5rem;
+  }
+}
