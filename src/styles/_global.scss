@@ -2,18 +2,19 @@
 
 :root {
   --font-primary: "Poppins", sans-serif;
-  --header-height: 100px;
-  --sidebar-width: 270px;
+  --header-height: 85px;
+  --sidebar-width: 250px;
+  --header-bar-height: 40px;
   --transition-fast: all 0.1s ease-in-out;
   --transition-normal: all 0.2s ease-in-out;
   --transition-slow: all 0.3s ease-in-out;
 
-  --clr-1: hsl(225, 9%, 9%);
-  --clr-2: hsl(216, 8%, 12%);
-  --clr-3: hsl(220, 7%, 18%);
-  --clr-4: hsl(216, 9%, 23%);
-  --clr-5: hsl(0, 0%, 38%);
-  --clr-6: hsl(0, 0%, 53%);
+  --clr-1: hsl(228, 11%, 9%);
+  --clr-2: hsl(228, 8%, 13%);
+  --clr-3: hsl(231, 8%, 18%);
+  --clr-4: hsl(232, 7%, 23%);
+
+  --clr-neutral: hsl(0, 0%, 100%);
 
   --clr-text-1: hsl(0, 0%, 100%);
   --clr-text-2: hsl(0, 0%, 80%);

@@ -1,5 +1,45 @@
 .header {
   width: 100%;
   height: var(--header-height);
-  background-color: red;
+  background-color: var(--clr-3);
+
+  &__left-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    background-color: var(--clr-3);
+  }
+
+  &__sidebar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: var(--header-height);
+    background-color: var(--clr-4);
+    color: var(--clr-text-1);
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--clr-text-1);
+    padding: 0 0.5rem;
+    margin-left: 1rem;
+  }
+
+  &__right-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    background-color: var(--clr-3);
+  }
 }
