@@ -5,6 +5,7 @@
   background-color: var(--clr-1);
   border-right: 2px solid var(--clr-4);
   height: 100%;
+  min-width: 50%;
 
   &__header-bar {
     display: flex;
@@ -34,5 +35,18 @@
     outline: none;
     cursor: pointer;
     margin-right: 0.5rem;
+  }
+
+  &__content {
+    width: 100%;
+    resize: none;
+    color: var(--clr-text-2);
+    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    overflow-y: scroll;
+    max-height: calc(100vh - var(--header-bar-height) - var(--header-height));
   }
 }

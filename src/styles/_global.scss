@@ -22,14 +22,11 @@
   --clr-text-4: hsl(0, 0%, 40%);
   --clr-text-neutral: hsl(0, 0%, 100%);
 
-  --clr-danger-1: hsl(0, 100%, 30%);
+  --clr-danger-1: hsl(0, 100%, 69%);
   --clr-danger-2: hsl(0, 100%, 70%);
-  --clr-danger-3: hsl(0, 100%, 90%);
 
-  //clr tangerine
-  --clr-accent-1: hsl(25, 65%, 51%);
-  --clr-accent-2: hsl(25, 100%, 70%);
-  --clr-accent-3: hsl(25, 100%, 90%);
+  --clr-accent-1: hsl(13, 75%, 55%);
+  --clr-accent-2: hsl(13, 75%, 65%);
 
   --toastify-color-dark: hsl(0, 0%, 14%);
   --toastify-color-success: var(--clr-accent);
@@ -53,8 +50,7 @@ html[data-theme="light"] {
   --clr-danger-2: hsl(0, 100%, 70%);
   --clr-danger-3: hsl(0, 100%, 90%);
 
-  //clr tangerine
-  --clr-accent-1: hsl(25, 65%, 51%);
+  --clr-accent-1: hsl(13, 75%, 58%);
   --clr-accent-2: hsl(25, 100%, 70%);
   --clr-accent-3: hsl(25, 100%, 90%);
 
@@ -75,14 +71,14 @@ html[data-theme="light"] {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--clr-2);
-  height: 2rem;
+  background: var(--clr-accent-1);
+  height: 1rem;
   /* border-radius: 1rem; */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--clr-2);
+  background: var(--clr-accent-1);
 }
 
 .container {
