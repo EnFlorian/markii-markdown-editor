@@ -1,6 +1,7 @@
-import Board from "./Board/Board";
+import Editor from "./Editor/Editor";
 import MainContainer from "./MainContainer/MainContainer";
 import Header from "./Header/Header";
 import Sidebar from "./Sidebar/Sidebar";
+import Preview from "./Preview/Preview";
 
-export { Board, MainContainer, Header, Sidebar };
+export { Editor, MainContainer, Header, Sidebar, Preview };
