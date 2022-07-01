@@ -2,31 +2,33 @@
 
 :root {
   --font-primary: "Poppins", sans-serif;
-  --navbar-height: 50px;
-  --footer-height: 50px;
+  --header-height: 80px;
   --sidebar-width: 280px;
-  --transition: all 0.2s ease-in-out;
+  --transition-fast: all 0.1s ease-in-out;
+  --transition-normal: all 0.2s ease-in-out;
+  --transition-slow: all 0.3s ease-in-out;
 
-  --clr-dark: hsl(0, 15%, 15%);
-  --clr-medium: hsl(0, 15%, 25%);
-  --clr-light: hsl(26, 60%, 60%);
-  --clr-lighter: hsl(33, 100%, 95%);
-  --clr-neutral: hsl(0, 0%, 100%);
+  --clr-1: hsl(225, 9%, 9%);
+  --clr-2: hsl(216, 8%, 12%);
+  --clr-3: hsl(220, 7%, 18%);
+  --clr-4: hsl(216, 9%, 23%);
+  --clr-5: hsl(0, 0%, 38%);
+  --clr-6: hsl(0, 0%, 53%);
 
-  --clr-text-dark: hsl(0, 0%, 8%);
-  --clr-text-medium: hsl(0, 0%, 15%);
-  --clr-text-light: hsl(0, 0%, 90%);
+  --clr-text-1: hsl(0, 0%, 100%);
+  --clr-text-2: hsl(0, 0%, 80%);
+  --clr-text-3: hsl(0, 0%, 60%);
+  --clr-text-4: hsl(0, 0%, 40%);
+  --clr-text-neutral: hsl(0, 0%, 100%);
 
-  --clr-danger-dark: hsl(0, 100%, 30%);
-  --clr-danger-medium: hsl(0, 100%, 70%);
-  --clr-danger-light: hsl(0, 100%, 90%);
+  --clr-danger-1: hsl(0, 100%, 30%);
+  --clr-danger-2: hsl(0, 100%, 70%);
+  --clr-danger-3: hsl(0, 100%, 90%);
 
-  --clr-footer: var(--clr-dark);
-  --clr-navbar: var(--clr-dark);
-
-  --clr-accent-dark: hsl(205, 61%, 65%);
-  --clr-accent-medium: hsl(205, 61%, 70%);
-  --clr-accent-light: hsl(205, 61%, 95%);
+  //clr tangerine
+  --clr-accent-1: hsl(25, 100%, 50%);
+  --clr-accent-2: hsl(25, 100%, 70%);
+  --clr-accent-3: hsl(25, 100%, 90%);
 
   --toastify-color-dark: hsl(0, 0%, 14%);
   --toastify-color-success: var(--clr-accent);
@@ -40,19 +42,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--clr-lighter);
+  background: var(--clr-1);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--clr-dark);
+  background: var(--clr-2);
   height: 2rem;
   /* border-radius: 1rem; */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--clr-dark);
+  background: var(--clr-2);
 }
 
 .container {

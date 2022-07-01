@@ -1,6 +1,6 @@
 import "./Board.scss";
 const Board = () => {
-  return <div>Board</div>;
+  return <main className="board">Board</main>;
 };
 
 export default Board;

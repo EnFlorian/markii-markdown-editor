@@ -1,0 +1,11 @@
+.home {
+  display: flex;
+  height: 100vh;
+
+  &__main-section {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100vw - var(--sidebar-width));
+    width: 100%;
+  }
+}

@@ -1,6 +1,6 @@
 import "./Sidebar.scss";
 const Sidebar = () => {
-  return <div>Sidebar</div>;
+  return <aside className="sidebar">Sidebar</aside>;
 };
 
 export default Sidebar;
