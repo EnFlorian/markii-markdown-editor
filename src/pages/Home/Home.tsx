@@ -2,7 +2,7 @@ import { Editor, Preview, Header, Sidebar } from "../../components";
 import { useUIContext } from "../../state/UIContext";
 import "./Home.scss";
 const Home = () => {
-  const { isSidebarOpen } = useUIContext();
+  const { isSidebarOpen, isEditorFullScreen } = useUIContext();
   return (
     <article className="home">
       {isSidebarOpen && <Sidebar />}
@@ -10,7 +10,7 @@ const Home = () => {
         <Header />
         <section className="home__content-section">
           <Editor />
-          <Preview />
+          {!isEditorFullScreen && <Preview />}
         </section>
       </main>
     </article>

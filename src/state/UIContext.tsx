@@ -5,6 +5,7 @@ const initialState: IUIState = {
   isLoading: false,
   isDarkMode: false,
   isSidebarOpen: false,
+  isEditorFullScreen: false,
 };
 
 const UIContext = createContext<IUIContext>({
@@ -12,6 +13,7 @@ const UIContext = createContext<IUIContext>({
   setIsLoading: () => {},
   setIsDarkMode: () => {},
   setIsSidebarOpen: () => {},
+  setIsEditorFullScreen: () => {},
 });
 
 export const UIProvider = ({ children }: IProps) => {
@@ -29,6 +31,10 @@ export const UIProvider = ({ children }: IProps) => {
     dispatch({ type: "SET_IS_SIDEBAR_OPEN", payload: isSidebarOpen });
   };
 
+  const setIsEditorFullScreen = (isEditorFullScreen: boolean) => {
+    dispatch({ type: "SET_IS_EDITOR_FULL_SCREEN", payload: isEditorFullScreen });
+  };
+
   return (
     <UIContext.Provider
       value={{
@@ -36,6 +42,7 @@ export const UIProvider = ({ children }: IProps) => {
         setIsLoading,
         setIsDarkMode,
         setIsSidebarOpen,
+        setIsEditorFullScreen,
       }}
     >
       {children}

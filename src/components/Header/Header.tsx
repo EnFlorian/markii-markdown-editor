@@ -4,6 +4,7 @@ import { AiOutlineFile } from "react-icons/ai";
 import { useFilesContext } from "../../state/FilesContext";
 import { useState } from "react";
 import { useUIContext } from "../../state/UIContext";
+import { FaTrash } from "react-icons/fa";
 
 const Navbar = () => {
   const { setOpenFile, openFile, addFile } = useFilesContext();
@@ -48,6 +49,12 @@ const Navbar = () => {
             />
           </div>
         </form>
+      </section>
+      <section className="header__right-content">
+        <FaTrash className="header__delete-icon" />
+        <button className="header__save-button" onClick={handleFileSave}>
+          Save Document
+        </button>
       </section>
     </section>
   );

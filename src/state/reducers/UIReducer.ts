@@ -15,6 +15,11 @@ const reducer = (state: IUIState, action: UIActionType) => {
         ...state,
         isLoading: action.payload,
       };
+    case "SET_IS_EDITOR_FULL_SCREEN":
+      return {
+        ...state,
+        isEditorFullScreen: action.payload,
+      };
     default:
       return state;
   }

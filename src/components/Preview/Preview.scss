@@ -7,7 +7,21 @@
 
   &__header-bar {
     display: flex;
+    align-items: center;
     background-color: var(--clr-2);
     height: var(--header-bar-height);
+  }
+
+  &__header-bar__left-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--clr-text-3);
+    margin-left: 0.3rem;
   }
 }

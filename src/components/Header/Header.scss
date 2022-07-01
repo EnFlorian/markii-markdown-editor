@@ -1,14 +1,13 @@
 .header {
   width: 100%;
   height: var(--header-height);
+  display: flex;
   background-color: var(--clr-3);
+  justify-content: space-between;
 
   &__left-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    background-color: var(--clr-3);
   }
 
   &__sidebar-button {
@@ -78,8 +77,24 @@
   &__right-content {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     height: 100%;
-    background-color: var(--clr-3);
+  }
+
+  &__delete-icon {
+    font-size: 1.5rem;
+    color: var(--clr-text-1);
+    margin-right: 1rem;
+  }
+
+  &__save-button {
+    font-size: 1.1rem;
+    color: var(--clr-text-1);
+    background-color: var(--clr-accent-1);
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 1rem;
   }
 }

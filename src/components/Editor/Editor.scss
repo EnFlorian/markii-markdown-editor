@@ -8,7 +8,31 @@
 
   &__header-bar {
     display: flex;
+    align-items: center;
     background-color: var(--clr-2);
     height: var(--header-bar-height);
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--clr-text-3);
+    margin-left: 0.3rem;
+  }
+
+  &__visibility-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    color: var(--clr-text-3);
+    outline: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
   }
 }
