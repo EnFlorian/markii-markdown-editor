@@ -3,7 +3,7 @@ const reducer = (state: IFilesState, action: FilesActionType) => {
     case "ADD_FILE":
       return {
         ...state,
-        files: [...state.files, action.payload],
+        files: state.files.filter((file) => file.id !== action.payload.id).concat(action.payload),
       };
     case "REMOVE_FILE":
       return {

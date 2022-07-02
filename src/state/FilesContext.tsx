@@ -1,15 +1,14 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from "./reducers/FilesReducer";
 
 const initialState: IFilesState = {
   files: [],
   isLoading: false,
   openFile: {
-    id: 1,
+    id: Date.now(),
     name: "Untitled",
     content: "",
     dateCreated: new Date(),
-    isSelected: true,
   },
 };
 
@@ -25,8 +24,25 @@ const FilesContext = createContext<IFilesContext>({
 export const FilesProvider = ({ children }: IProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    const files: IFile[] = JSON.parse(localStorage.getItem("files") || "[]");
+    files.map((file) => addFile(file));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("files", JSON.stringify(state.files));
+  }, [state.files]);
+
   const addFile = (file: IFile) => {
-    dispatch({ type: "ADD_FILE", payload: file });
+    const formattedFile = {
+      ...file,
+      name: file.name.trim().replace(" ", "-"),
+      content: file.content.trim(),
+    };
+
+    dispatch({ type: "ADD_FILE", payload: formattedFile });
+    const newFile: IFile = { ...initialState.openFile };
+    dispatch({ type: "SET_OPEN_FILE", payload: newFile });
   };
 
   const removeFile = (file: IFile) => {
@@ -38,6 +54,7 @@ export const FilesProvider = ({ children }: IProps) => {
   };
 
   const setOpenFile = (file: IFile) => {
+    console.log("setOpenFile", file);
     dispatch({ type: "SET_OPEN_FILE", payload: file });
   };
 

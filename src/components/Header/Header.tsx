@@ -2,14 +2,12 @@ import "./Header.scss";
 import { IoCloseSharp, IoMenu } from "react-icons/io5";
 import { AiOutlineFile } from "react-icons/ai";
 import { useFilesContext } from "../../state/FilesContext";
-import { useState } from "react";
 import { useUIContext } from "../../state/UIContext";
 import { FaTrash } from "react-icons/fa";
 
-const Navbar = () => {
-  const { setOpenFile, openFile, addFile } = useFilesContext();
+const Header = () => {
+  const { setOpenFile, openFile, addFile, removeFile } = useFilesContext();
   const { isSidebarOpen, setIsSidebarOpen } = useUIContext();
-  const [fileName, setFileName] = useState("Untitled");
 
   const handleFileNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = { ...openFile, name: e.target.value };
@@ -19,11 +17,15 @@ const Navbar = () => {
   const handleFileSave = () => {
     if (!openFile) return;
     addFile(openFile);
-    console.log("File saved");
   };
 
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleRemoveFile = () => {
+    if (!openFile) return;
+    removeFile(openFile);
   };
 
   return (
@@ -51,7 +53,7 @@ const Navbar = () => {
         </form>
       </section>
       <section className="header__right-content">
-        <FaTrash className="header__delete-icon" />
+        <FaTrash className="header__delete-icon" onClick={handleRemoveFile} />
         <button className="header__save-button" onClick={handleFileSave}>
           Save Document
         </button>
@@ -60,4 +62,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

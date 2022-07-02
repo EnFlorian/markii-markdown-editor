@@ -34,82 +34,88 @@
     background-color: transparent;
     overflow-y: scroll;
     max-height: calc(100vh - var(--header-bar-height) - var(--header-height));
-  }
 
-  & > h1 {
-    font-size: 32px;
-    line-height: 42px;
-  }
+    h1 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      margin: 1rem 0 0.2rem 0;
+    }
 
-  & > h2 {
-    font-size: 24px;
-    line-height: 31px;
-  }
+    h2 {
+      font-size: 2rem;
+      line-height: 2rem;
+      margin: 1rem 0 0.2rem 0;
+    }
 
-  & > h3 {
-    font-size: 28px;
-    line-height: 37px;
-  }
+    h3 {
+      font-size: 1.5rem;
+      line-height: 3rem;
+      margin: 1rem 0 0.2rem 0;
+    }
 
-  & > h4 {
-    font-size: 20px;
-    line-height: 37px;
-  }
+    h4 {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin: 1rem 0 0.2rem 0;
+    }
 
-  & > h5 {
-    font-size: 16px;
-    line-height: 21px;
-  }
+    h5 {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin: 1rem 0 0.2rem 0;
+    }
 
-  & > h6 {
-    font-size: 14px;
-    line-height: 21px;
-  }
+    h6 {
+      font-size: 0.9rem;
+      line-height: 1.1rem;
+      margin: 1rem 0 0.2rem 0;
+    }
 
-  & > p {
-    line-height: 24px;
-  }
+    p {
+      line-height: 1.2rem;
+    }
 
-  & > li {
-    line-height: 1.3rem;
-  }
+    li {
+      line-height: 1.3rem;
+    }
 
-  & > ul {
-    margin-bottom: 1.5rem;
-  }
+    ul {
+      margin-bottom: 1.2rem;
+    }
 
-  & > ol {
-  }
+    ul li::before {
+      content: "\2022";
+      color: var(--clr-accent-1);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: 0.1rem;
+    }
 
-  & > ul li::before {
-    content: "\2022";
-    color: var(--clr-accent-1);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: 0.1rem;
-  }
+    blockquote {
+      border-left: 0.3rem solid var(--clr-accent-1);
+      padding: 0.5rem 1rem;
+      background-color: var(--clr-3);
+      border-radius: 0.2rem;
+      margin-bottom: 1rem;
+    }
 
-  & > blockquote {
-    border-left: 2px solid var(--clr-accent-1);
-    padding: 0.5rem 1rem;
-    background-color: var(--clr-3);
-    border-radius: 0.2rem;
-  }
+    blockquote p {
+      color: var(--clr-text-3);
+    }
 
-  & > blockquote p {
-    @apply text-sm text-dark-gray dark:text-white font-bold m-0;
-  }
+    pre {
+      padding: 0.5rem 0rem;
+    }
 
-  & > code {
-    @apply text-dark-gray dark:text-white text-xs sm:text-sm;
-  }
-
-  & > pre {
-    @apply p-3 sm:p-6 bg-light-gray-1/2 rounded mb-5 dark:bg-dark-gray-2;
-  }
-
-  & > pre p {
-    @apply text-dark-gray font-normal text-sm;
+    code {
+      background-color: var(--clr-2);
+      padding: 0.4rem 0.5rem;
+      display: block;
+      border-radius: 0.3rem;
+      font-size: 0.8rem;
+      margin: 0.2rem 0;
+      color: var(--clr-text-3);
+    }
   }
 }
