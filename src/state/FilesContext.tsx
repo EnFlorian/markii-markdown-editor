@@ -19,6 +19,7 @@ const FilesContext = createContext<IFilesContext>({
   setIsLoading: () => {},
   setOpenFile: () => {},
   downloadFile: () => {},
+  newFile: () => {},
 });
 
 export const FilesProvider = ({ children }: IProps) => {
@@ -34,19 +35,12 @@ export const FilesProvider = ({ children }: IProps) => {
   }, [state.files]);
 
   const addFile = (file: IFile) => {
-    const formattedFile = {
-      ...file,
-      name: file.name.trim().replace(" ", "-"),
-      content: file.content.trim(),
-    };
-
-    dispatch({ type: "ADD_FILE", payload: formattedFile });
-    const newFile: IFile = { ...initialState.openFile };
-    dispatch({ type: "SET_OPEN_FILE", payload: newFile });
+    dispatch({ type: "ADD_FILE", payload: file });
   };
 
   const removeFile = (file: IFile) => {
     dispatch({ type: "REMOVE_FILE", payload: file });
+    dispatch({ type: "NEW_FILE" });
   };
 
   const setIsLoading = (isLoading: boolean) => {
@@ -62,6 +56,10 @@ export const FilesProvider = ({ children }: IProps) => {
     dispatch({ type: "DOWNLOAD_FILE", payload: file });
   };
 
+  const newFile = () => {
+    dispatch({ type: "NEW_FILE" });
+  };
+
   return (
     <FilesContext.Provider
       value={{
@@ -71,6 +69,7 @@ export const FilesProvider = ({ children }: IProps) => {
         setIsLoading,
         setOpenFile,
         downloadFile,
+        newFile,
       }}
     >
       {children}

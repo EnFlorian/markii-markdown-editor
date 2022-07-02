@@ -1,10 +1,16 @@
 const reducer = (state: IFilesState, action: FilesActionType) => {
   switch (action.type) {
-    case "ADD_FILE":
+    case "ADD_FILE": {
+      const formattedFile = {
+        ...action.payload,
+        name: action.payload.name.trim().replaceAll(" ", "-"),
+        content: action.payload.content.trim(),
+      };
       return {
         ...state,
-        files: state.files.filter((file) => file.id !== action.payload.id).concat(action.payload),
+        files: state.files.filter((file) => file.id !== formattedFile.id).concat(formattedFile),
       };
+    }
     case "REMOVE_FILE":
       return {
         ...state,
@@ -24,6 +30,16 @@ const reducer = (state: IFilesState, action: FilesActionType) => {
       return {
         ...state,
         files: state.files.map((file) => (file.id === action.payload.id ? action.payload : file)),
+      };
+    case "NEW_FILE":
+      return {
+        ...state,
+        openFile: {
+          id: state.files.length + 1,
+          name: "Untitled",
+          content: "",
+          dateCreated: new Date(),
+        },
       };
 
     default:
