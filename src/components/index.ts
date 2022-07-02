@@ -4,4 +4,6 @@ import Header from "./Header/Header";
 import Sidebar from "./Sidebar/Sidebar";
 import Preview from "./Preview/Preview";
 import FileCard from "./FileCard/FileCard";
-export { Editor, MainContainer, Header, Sidebar, Preview, FileCard };
+import DeleteModal from "./DeleteModal/DeleteModal";
+
+export { Editor, MainContainer, Header, Sidebar, Preview, FileCard, DeleteModal };

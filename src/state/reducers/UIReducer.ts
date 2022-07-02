@@ -20,6 +20,11 @@ const reducer = (state: IUIState, action: UIActionType) => {
         ...state,
         isEditorFullScreen: action.payload,
       };
+    case "SET_IS_MODAL_OPEN":
+      return {
+        ...state,
+        isModalOpen: action.payload,
+      };
     default:
       return state;
   }

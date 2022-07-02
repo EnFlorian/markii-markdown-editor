@@ -4,6 +4,7 @@ interface IUIState {
   isDarkMode: boolean;
   isSidebarOpen: boolean;
   isEditorFullScreen: boolean;
+  isModalOpen: boolean;
 }
 
 interface IUIContext extends IUIState {
@@ -11,13 +12,15 @@ interface IUIContext extends IUIState {
   setIsDarkMode: (isDarkMode: boolean) => void;
   setIsSidebarOpen: (isSidebarOpen: boolean) => void;
   setIsEditorFullScreen: (isEditorFullScreen: boolean) => void;
+  setIsModalOpen: (isModalOpen: boolean) => void;
 }
 
 type UIActionType =
   | { type: "SET_IS_DARK_MODE"; payload: boolean }
   | { type: "SET_IS_SIDEBAR_OPEN"; payload: boolean }
   | { type: "SET_IS_LOADING"; payload: boolean }
-  | { type: "SET_IS_EDITOR_FULL_SCREEN"; payload: boolean };
+  | { type: "SET_IS_EDITOR_FULL_SCREEN"; payload: boolean }
+  | { type: "SET_IS_MODAL_OPEN"; payload: boolean };
 
 interface IProps {
   children: React.ReactNode;

@@ -1,8 +1,8 @@
-import { Editor, Preview, Header, Sidebar } from "../../components";
+import { Editor, Preview, Header, Sidebar, DeleteModal } from "../../components";
 import { useUIContext } from "../../state/UIContext";
 import "./Home.scss";
 const Home = () => {
-  const { isSidebarOpen, isEditorFullScreen } = useUIContext();
+  const { isSidebarOpen, isEditorFullScreen, isModalOpen } = useUIContext();
   return (
     <article className="home">
       {isSidebarOpen && <Sidebar />}
@@ -13,6 +13,7 @@ const Home = () => {
           {!isEditorFullScreen && <Preview />}
         </section>
       </main>
+      {isModalOpen && <DeleteModal />}
     </article>
   );
 };

@@ -8,7 +8,7 @@ import { FaTrash } from "react-icons/fa";
 
 const Header = () => {
   const { setOpenFile, openFile, addFile, removeFile } = useFilesContext();
-  const { isSidebarOpen, setIsSidebarOpen } = useUIContext();
+  const { isSidebarOpen, setIsSidebarOpen, setIsModalOpen } = useUIContext();
 
   const handleFileNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = { ...openFile, name: e.target.value };
@@ -25,8 +25,7 @@ const Header = () => {
   };
 
   const handleRemoveFile = () => {
-    if (!openFile) return;
-    removeFile(openFile);
+    setIsModalOpen(true);
   };
 
   return (
