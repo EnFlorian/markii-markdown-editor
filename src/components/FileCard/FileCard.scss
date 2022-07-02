@@ -1,0 +1,36 @@
+.file-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--clr-3);
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  margin-bottom: 0.5rem;
+  transition: var(--transition-fast);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--clr-4);
+  }
+
+  &__icon {
+    color: var(--clr-text-1);
+    font-size: 1.7rem;
+    margin-right: 0.6rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    font-size: 0.8rem;
+    color: var(--clr-text-3);
+  }
+
+  &__name {
+    font-size: 0.9rem;
+    color: var(--clr-text-1);
+  }
+}
