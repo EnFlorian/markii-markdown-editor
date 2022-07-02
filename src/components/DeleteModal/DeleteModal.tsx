@@ -38,9 +38,9 @@ const DeleteModal = () => {
       contentLabel="Confirm Delete"
     >
       <section className="delete-modal">
-        <h2 className="delete-modal__title">Confirm Deletion</h2>
+        <h2 className="delete-modal__title">Confirm Deletion!</h2>
         <p className="delete-modal__description">
-          Are you sure you want to delete this file? This action cannot be undone
+          Are you sure you want to delete this file? This action cannot be undone.
         </p>
         <div className="delete-modal__buttons">
           <button className="delete-modal__button delete-modal__button--danger" onClick={handleConfirmation}>

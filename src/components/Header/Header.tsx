@@ -16,7 +16,6 @@ const Header = () => {
   };
 
   const handleFileSave = () => {
-    if (!openFile) return;
     addFile(openFile);
   };
 
