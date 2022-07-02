@@ -95,7 +95,9 @@
   }
 
   &__save-button {
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
     color: var(--clr-text-1);
     background-color: var(--clr-accent-1);
     padding: 0.5rem 0.8rem;
@@ -109,6 +111,33 @@
     &:hover {
       background-color: var(--clr-accent-2);
       transform: scale(1.01);
+    }
+  }
+
+  &__save-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__title {
+      display: none;
+    }
+
+    &__file-form {
+      margin-left: 1rem;
+    }
+
+    &__save-button {
+      p {
+        display: none;
+      }
+    }
+
+    &__save-icon {
+      margin-right: 0;
     }
   }
 }

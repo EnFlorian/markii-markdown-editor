@@ -47,6 +47,13 @@
     border: none;
     background-color: transparent;
     overflow-y: scroll;
+    overflow-x: hidden;
     max-height: calc(100vh - var(--header-bar-height) - var(--header-height));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .editor {
+    border-right: none;
   }
 }

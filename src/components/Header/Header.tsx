@@ -1,6 +1,7 @@
 import "./Header.scss";
 import { IoCloseSharp, IoMenu } from "react-icons/io5";
 import { AiOutlineFile } from "react-icons/ai";
+import { BiSave } from "react-icons/bi";
 import { useFilesContext } from "../../state/FilesContext";
 import { useUIContext } from "../../state/UIContext";
 import { FaTrash } from "react-icons/fa";
@@ -55,7 +56,8 @@ const Header = () => {
       <section className="header__right-content">
         <FaTrash className="header__delete-icon" onClick={handleRemoveFile} />
         <button className="header__save-button" onClick={handleFileSave}>
-          Save Document
+          <BiSave className="header__save-icon" />
+          <p>Save Document</p>
         </button>
       </section>
     </section>
