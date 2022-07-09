@@ -40,10 +40,11 @@
   &__content {
     width: 100%;
     resize: none;
-    color: var(--clr-text-2);
+    color: var(--clr-text-editor);
     padding: 0.5rem 0.5rem 0.5rem 0.7rem;
     height: 100%;
     outline: none;
+    font-size: 0.9rem;
     border: none;
     background-color: transparent;
     overflow-y: scroll;
