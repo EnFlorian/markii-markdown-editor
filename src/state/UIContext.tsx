@@ -4,9 +4,9 @@ import reducer from "./reducers/UIReducer";
 const initialState: IUIState = {
   isLoading: false,
   isDarkMode: false,
-  isSidebarOpen: false,
+  isSidebarOpen: true,
   isEditorFullScreen: false,
-  isModalOpen: true,
+  isModalOpen: false,
 };
 
 const UIContext = createContext<IUIContext>({
