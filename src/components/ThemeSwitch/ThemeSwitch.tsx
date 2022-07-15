@@ -1,25 +1,24 @@
 import { useEffect } from "react";
-import { useUIContext } from "../../state/UIContext";
 import "./ThemeSwitch.scss";
 import { BsSunFill } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { setIsDarkMode } from "../../state/UISlice";
+import { RootState } from "../../state/store";
 
 const ThemeSwitch = () => {
-  const { isDarkMode, setIsDarkMode } = useUIContext();
-
-  useEffect(() => {
-    document.getElementsByTagName("HTML")[0].setAttribute("data-theme", localStorage.getItem("theme") || "light");
-  }, []);
+  const isDarkMode = useSelector((state: RootState) => state.ui.isDarkMode);
+  const dispatch = useDispatch();
 
   const toggleThemeChange = () => {
     if (!isDarkMode) {
       localStorage.setItem("theme", "dark");
       document.getElementsByTagName("HTML")[0].setAttribute("data-theme", localStorage.getItem("theme") as string);
-      setIsDarkMode(!isDarkMode);
+      dispatch(setIsDarkMode(!isDarkMode));
     } else {
       localStorage.setItem("theme", "light");
       document.getElementsByTagName("HTML")[0].setAttribute("data-theme", localStorage.getItem("theme") as string);
-      setIsDarkMode(!isDarkMode);
+      dispatch(setIsDarkMode(!isDarkMode));
     }
   };
 

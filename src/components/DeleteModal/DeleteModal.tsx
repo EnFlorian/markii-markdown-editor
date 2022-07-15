@@ -1,7 +1,9 @@
 import "./DeleteModal.scss";
 import Modal from "react-modal";
-import { useUIContext } from "../../state/UIContext";
-import { useFilesContext } from "../../state/FilesContext";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../state/store";
+import { setIsModalOpen } from "../../state/UISlice";
+import { removeFile } from "../../state/FilesSlice";
 
 const customStyles = {
   overlay: {
@@ -22,18 +24,19 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 const DeleteModal = () => {
-  const { isModalOpen, setIsModalOpen } = useUIContext();
-  const { openFile, removeFile } = useFilesContext();
+  const isModalOpen = useSelector((state: RootState) => state.ui.isModalOpen);
+  const openFile = useSelector((state: RootState) => state.files.openFile);
+  const dispatch = useDispatch();
 
   const handleConfirmation = () => {
-    setIsModalOpen(false);
-    removeFile(openFile);
+    dispatch(setIsModalOpen(false));
+    dispatch(removeFile(openFile));
   };
 
   return (
     <Modal
       isOpen={isModalOpen}
-      onRequestClose={() => setIsModalOpen(false)}
+      onRequestClose={() => dispatch(setIsModalOpen(false))}
       style={customStyles}
       contentLabel="Confirm Delete"
     >
@@ -46,7 +49,7 @@ const DeleteModal = () => {
           <button className="delete-modal__button delete-modal__button--danger" onClick={handleConfirmation}>
             Delete
           </button>
-          <button className="delete-modal__button " onClick={() => setIsModalOpen(false)}>
+          <button className="delete-modal__button " onClick={() => dispatch(setIsModalOpen(false))}>
             Cancel
           </button>
         </div>

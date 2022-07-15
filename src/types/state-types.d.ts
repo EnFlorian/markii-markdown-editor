@@ -29,24 +29,15 @@ interface IProps {
 // Files
 
 interface IFile {
-  id: number;
+  id: string;
   name: string;
   content: string;
-  dateCreated: Date;
+  dateCreated: number;
 }
 interface IFilesState {
   files: IFile[];
   isLoading: boolean;
   openFile: IFile;
-}
-
-interface IFilesContext extends IFilesState {
-  addFile: (file: IFile) => void;
-  removeFile: (id: IFile) => void;
-  setOpenFile: (file: IFile) => void;
-  setIsLoading: (isLoading: boolean) => void;
-  downloadFile: (file: IFile) => void;
-  newFile: () => void;
 }
 
 type FilesActionType =

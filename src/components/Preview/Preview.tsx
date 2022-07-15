@@ -1,11 +1,12 @@
-import { useFilesContext } from "../../state/FilesContext";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 
 import "./Preview.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 const Preview = () => {
-  const { openFile } = useFilesContext();
+  const { openFile } = useSelector((state: RootState) => state.files);
 
   return (
     <section className="preview">

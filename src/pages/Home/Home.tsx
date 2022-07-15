@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import { Editor, Preview, Header, Sidebar, DeleteModal } from "../../components";
-import { useUIContext } from "../../state/UIContext";
+import { RootState } from "../../state/store";
 import "./Home.scss";
 const Home = () => {
-  const { isSidebarOpen, isEditorFullScreen, isModalOpen } = useUIContext();
+  const { isSidebarOpen, isEditorFullScreen, isModalOpen } = useSelector((state: RootState) => state.ui);
+
   return (
     <article className="home">
       {isSidebarOpen && <Sidebar />}

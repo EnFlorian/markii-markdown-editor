@@ -2,29 +2,34 @@ import "./Header.scss";
 import { IoCloseSharp, IoMenu } from "react-icons/io5";
 import { AiOutlineFile } from "react-icons/ai";
 import { BiSave } from "react-icons/bi";
-import { useFilesContext } from "../../state/FilesContext";
-import { useUIContext } from "../../state/UIContext";
 import { FaTrash } from "react-icons/fa";
+import { setOpenFile, addFile, newFile } from "../../state/FilesSlice";
+import { setIsModalOpen, setIsSidebarOpen } from "../../state/UISlice";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
-  const { setOpenFile, openFile, addFile, removeFile } = useFilesContext();
-  const { isSidebarOpen, setIsSidebarOpen, setIsModalOpen } = useUIContext();
+  const { isSidebarOpen } = useSelector((state: RootState) => state.ui);
+  const openFile = useSelector((state: RootState) => state.files.openFile);
+  const dispatch = useDispatch();
 
   const handleFileNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = { ...openFile, name: e.target.value };
-    setOpenFile(file);
+    dispatch(setOpenFile(file));
   };
 
   const handleFileSave = () => {
-    addFile(openFile);
+    dispatch(addFile(openFile));
+    dispatch(newFile());
   };
 
   const handleSidebarToggle = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    dispatch(setIsSidebarOpen(!isSidebarOpen));
   };
 
   const handleRemoveFile = () => {
-    setIsModalOpen(true);
+    dispatch(setIsModalOpen(true));
   };
 
   return (

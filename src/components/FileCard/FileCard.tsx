@@ -1,12 +1,14 @@
 import { AiOutlineFile } from "react-icons/ai";
-import { useFilesContext } from "../../state/FilesContext";
 import "./FileCard.scss";
+import { setOpenFile } from "../../state/FilesSlice";
+import { useDispatch } from "react-redux";
+
 const FileCard = (file: IFile) => {
   const { name, dateCreated } = file;
-  const { setOpenFile } = useFilesContext();
+  const dispatch = useDispatch();
 
   return (
-    <section className="file-card" onClick={() => setOpenFile(file)}>
+    <section className="file-card" onClick={() => dispatch(setOpenFile(file))}>
       <AiOutlineFile className="file-card__icon" />
       <div className="file-card__info">
         <p className="file-card__date">{new Date(dateCreated).toISOString().split("T")[0]}</p>

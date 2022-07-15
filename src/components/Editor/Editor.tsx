@@ -1,19 +1,23 @@
 import "./Editor.scss";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { useUIContext } from "../../state/UIContext";
-import { useFilesContext } from "../../state/FilesContext";
+import { setOpenFile } from "../../state/FilesSlice";
+import { setIsEditorFullScreen } from "../../state/UISlice";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
+import { useDispatch } from "react-redux";
 
 const Editor = () => {
-  const { isEditorFullScreen, setIsEditorFullScreen } = useUIContext();
-  const { openFile, setOpenFile } = useFilesContext();
+  const isEditorFullScreen = useSelector((state: RootState) => state.ui.isEditorFullScreen);
+  const openFile = useSelector((state: RootState) => state.files.openFile);
+  const dispatch = useDispatch();
 
   const handleFileContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const file = { ...openFile, content: e.target.value };
-    setOpenFile(file);
+    dispatch(setOpenFile(file));
   };
 
   const handleFullScreenToggle = () => {
-    setIsEditorFullScreen(!isEditorFullScreen);
+    dispatch(setIsEditorFullScreen(!isEditorFullScreen));
   };
 
   return (
