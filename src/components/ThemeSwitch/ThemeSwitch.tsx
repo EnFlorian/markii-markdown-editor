@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./ThemeSwitch.scss";
 import { BsSunFill } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
