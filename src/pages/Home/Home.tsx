@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { Editor, Preview, Header, Sidebar, DeleteModal } from "../../components";
 import { RootState } from "../../state/store";
 import "./Home.scss";
+
 const Home = () => {
   const { isSidebarOpen, isEditorFullScreen, isModalOpen } = useSelector((state: RootState) => state.ui);
 

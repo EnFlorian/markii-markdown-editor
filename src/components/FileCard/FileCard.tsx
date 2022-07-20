@@ -2,6 +2,7 @@ import { AiOutlineFile } from "react-icons/ai";
 import "./FileCard.scss";
 import { setOpenFile } from "../../state/FilesSlice";
 import { useDispatch } from "react-redux";
+import { IFile } from "../../types/state";
 
 const FileCard = (file: IFile) => {
   const { name, dateCreated } = file;

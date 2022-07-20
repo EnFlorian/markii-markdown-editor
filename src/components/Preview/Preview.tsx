@@ -1,6 +1,5 @@
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
-
 import "./Preview.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";

@@ -1,6 +1,5 @@
-// make ui slice
-
 import { createSlice } from "@reduxjs/toolkit";
+import { IUIState } from "../types/state";
 
 export const initialUIState: IUIState = {
   isLoading: false,
@@ -33,5 +32,4 @@ export const uiSlice = createSlice({
 });
 
 export const { setIsLoading, setIsDarkMode, setIsSidebarOpen, setIsEditorFullScreen, setIsModalOpen } = uiSlice.actions;
-
 export default uiSlice.reducer;

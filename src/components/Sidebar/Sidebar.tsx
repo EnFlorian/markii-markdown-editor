@@ -4,9 +4,12 @@ import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 import "./Sidebar.scss";
 import { RootState } from "../../state/store";
 import { newFile } from "../../state/FilesSlice";
+
 const Sidebar = () => {
   const { files } = useSelector((state: RootState) => state.files);
   const dispatch = useDispatch();
+
+  const cards = files.map((file) => <FileCard key={file.id} {...file} />);
 
   return (
     <aside className="sidebar">
@@ -16,11 +19,7 @@ const Sidebar = () => {
         <button className="sidebar__new-file-button" onClick={() => dispatch(newFile())}>
           New Document
         </button>
-        <ul className="sidebar__files">
-          {files.map((file) => (
-            <FileCard key={file.id} {...file} />
-          ))}
-        </ul>
+        <ul className="sidebar__files">{cards}</ul>
       </section>
       <section className="sidebar__bottom-content">
         <span className="sidebar__switch">

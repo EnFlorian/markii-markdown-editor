@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
+import { markdown } from "../data";
+import { IFilesState } from "../types/state";
 
 const initialState: IFilesState = {
   files: [],
@@ -7,7 +9,7 @@ const initialState: IFilesState = {
   openFile: {
     id: uuid(),
     name: "Untitled",
-    content: "",
+    content: markdown,
     dateCreated: Date.now(),
   },
 };
@@ -39,7 +41,5 @@ export const filesSlice = createSlice({
   },
 });
 
-//export the slice of files
 export const { addFile, removeFile, setOpenFile, setIsLoading, newFile } = filesSlice.actions;
-
 export default filesSlice.reducer;
