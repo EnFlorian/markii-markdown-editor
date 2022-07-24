@@ -60,7 +60,7 @@ const Header = () => {
         <FaTrash className="header__delete-icon" onClick={handleRemoveFile} />
         <button className="header__save-button" onClick={handleFileSave}>
           <BiSave className="header__save-icon" />
-          <p>Save Document</p>
+          <p>New Document</p>
         </button>
       </section>
     </section>

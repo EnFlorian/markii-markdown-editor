@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../state/store";
 import { setIsModalOpen } from "../../state/UISlice";
-import { removeFile } from "../../state/FilesSlice";
+import { newFile, removeFile } from "../../state/FilesSlice";
 
 const customStyles = {
   overlay: {
@@ -31,6 +31,7 @@ const DeleteModal = () => {
   const handleConfirmation = () => {
     dispatch(setIsModalOpen(false));
     dispatch(removeFile(openFile));
+    dispatch(newFile());
   };
 
   return (
@@ -42,9 +43,7 @@ const DeleteModal = () => {
     >
       <section className="delete-modal">
         <h2 className="delete-modal__title">Confirm Deletion!</h2>
-        <p className="delete-modal__description">
-          Are you sure you want to delete this file? This action cannot be undone.
-        </p>
+        <p className="delete-modal__description">Are you sure you want to delete this file? This action cannot be undone.</p>
         <div className="delete-modal__buttons">
           <button className="delete-modal__button delete-modal__button--danger" onClick={handleConfirmation}>
             Delete

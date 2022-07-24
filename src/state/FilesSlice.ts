@@ -20,6 +20,7 @@ export const filesSlice = createSlice({
   reducers: {
     addFile: (state, action) => {
       state.files.push(action.payload);
+      state.openFile = initialState.openFile;
     },
     removeFile: (state, action) => {
       state.files = state.files.filter((file) => file.id !== action.payload.id);
