@@ -10,7 +10,7 @@
 
 
 ## 👩‍💻 Live Website
-### [Markii (Vercel)](markii-markdown-editor.vercel.app)
+### [Markii (Vercel)](https://markii-markdown-editor.vercel.app/)
 
 ## Offline Demo
 
