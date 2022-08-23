@@ -9,12 +9,16 @@
  - Pure (S)CSS
 
 
-## 👩‍💻 Live Demo
-##### Go To something.com
+## 👩‍💻 Live Website
+### [Markii (Vercel)](https://markii-markdown-editor.vercel.app/)
 
-[Live Preview](enflorian.com)
+## Offline Demo
 
+### Desktop preview
+![Markii](/demo/markii-desktop-demo.gif)
 
+### Mobile preview
+![Markii](/demo/markii-mobile-demo.gif)
 
 
   
