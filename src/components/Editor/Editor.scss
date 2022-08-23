@@ -1,55 +1,55 @@
 .editor {
+  background-color: var(--clr-1);
+  border-right: 2px solid var(--clr-4);
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: var(--clr-1);
-  border-right: 2px solid var(--clr-4);
   height: 100%;
   min-width: 50%;
 
   &__header-bar {
-    display: flex;
     align-items: center;
     background-color: var(--clr-2);
+    display: flex;
     height: var(--header-bar-height);
     justify-content: space-between;
   }
 
   &__title {
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 300;
     color: var(--clr-text-3);
+    font-size: 1rem;
+    font-weight: 300;
     margin-left: 0.3rem;
+    text-transform: uppercase;
   }
 
   &__visibility-button {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
     background-color: transparent;
     border: none;
-    height: 100%;
     color: var(--clr-text-3);
-    outline: none;
     cursor: pointer;
+    display: flex;
+    font-size: 1.3rem;
+    height: 100%;
+    justify-content: center;
     margin-right: 0.5rem;
+    outline: none;
   }
 
   &__content {
-    width: 100%;
-    resize: none;
-    color: var(--clr-text-editor);
-    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
-    height: 100%;
-    outline: none;
-    font-size: 0.9rem;
-    border: none;
     background-color: transparent;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    border: none;
+    color: var(--clr-text-editor);
+    font-size: 0.9rem;
+    height: 100%;
     max-height: calc(100vh - var(--header-bar-height) - var(--header-height));
+    outline: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    resize: none;
+    width: 100%;
   }
 }
 

@@ -1,17 +1,17 @@
 .theme-switch {
-  outline: none;
-  background-color: transparent;
-  padding: 0.3rem 0rem;
-  border: none;
-  display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
   color: var(--clr-text-1);
+  display: flex;
+  font-size: 1.2rem;
+  outline: none;
+  padding: 0.3rem 0rem;
   transition: var(--transition-fast);
 
   &:hover {
-    cursor: pointer;
     color: var(--clr-accent-1);
+    cursor: pointer;
   }
 
   &__mode {

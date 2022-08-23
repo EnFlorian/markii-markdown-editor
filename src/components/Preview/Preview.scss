@@ -18,22 +18,22 @@
   }
 
   &__title {
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 300;
     color: var(--clr-text-3);
+    font-size: 1rem;
+    font-weight: 300;
     margin-left: 0.3rem;
+    text-transform: uppercase;
   }
 
   &__content {
-    font-size: 0.9rem;
-    width: 100%;
-    color: var(--clr-text-editor);
-    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
-    height: 100%;
     background-color: transparent;
-    overflow-y: scroll;
+    color: var(--clr-text-editor);
+    font-size: 0.9rem;
+    height: 100%;
     max-height: calc(100vh - var(--header-bar-height) - var(--header-height));
+    overflow-y: scroll;
+    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    width: 100%;
 
     h1 {
       font-size: 2.5rem;
@@ -84,12 +84,12 @@
     }
 
     ul li::before {
-      content: "\2022";
       color: var(--clr-accent-1);
-      font-weight: bold;
+      content: "\2022";
       display: inline-block;
-      width: 1em;
+      font-weight: bold;
       margin-left: 0.1rem;
+      width: 1em;
 
       &:first-child {
         margin-left: 0;
@@ -105,13 +105,13 @@
     }
 
     ol li::before {
+      color: var(--clr-accent-2);
       content: counter(item, decimal) ".";
       counter-increment: item;
-      color: var(--clr-accent-2);
-      font-weight: bold;
       display: inline-block;
-      width: 1em;
+      font-weight: bold;
       margin-left: 0.1rem;
+      width: 1em;
 
       &:first-child {
         margin-left: 0;
@@ -124,24 +124,24 @@
       &::before {
         content: "";
         display: inline-block;
-        width: 1em;
         margin-left: 0.1rem;
+        width: 1em;
       }
 
       &::after {
         content: "";
         display: inline-block;
-        width: 1em;
         margin-left: 0.1rem;
+        width: 1em;
       }
     }
 
     blockquote {
-      border-left: 0.3rem solid var(--clr-accent-1);
-      padding: 0.5rem 1rem;
       background-color: var(--clr-3);
+      border-left: 0.3rem solid var(--clr-accent-1);
       border-radius: 0.2rem;
       margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
     }
 
     blockquote p {
@@ -154,12 +154,12 @@
 
     code {
       background-color: var(--clr-2);
-      padding: 0.4rem 0.5rem;
-      display: block;
       border-radius: 0.3rem;
+      color: var(--clr-text-3);
+      display: block;
       font-size: 0.8rem;
       margin: 0.2rem 0;
-      color: var(--clr-text-3);
+      padding: 0.4rem 0.5rem;
     }
 
     a {
@@ -172,28 +172,28 @@
     }
 
     img {
-      max-width: 100%;
       height: auto;
+      max-width: 100%;
     }
 
     iframe {
-      max-width: 100%;
       height: auto;
+      max-width: 100%;
     }
 
     table {
       border-collapse: collapse;
-      width: 100%;
       border-spacing: 0;
       border: 1px solid var(--clr-text-3);
       margin-bottom: 1rem;
+      width: 100%;
     }
 
     table th {
       border: 1px solid var(--clr-text-3);
+      font-weight: bold;
       padding: 0.5rem;
       text-align: left;
-      font-weight: bold;
     }
 
     table td {

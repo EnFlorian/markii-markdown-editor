@@ -1,45 +1,45 @@
 .header {
-  width: 100%;
-  height: var(--header-height);
-  display: flex;
   background-color: var(--clr-3);
+  display: flex;
+  height: var(--header-height);
   justify-content: space-between;
+  width: 100%;
 
   &__left-content {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 
   &__sidebar-button {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 3rem;
     background-color: transparent;
-    border: none;
-    height: 100%;
-    width: var(--header-height);
     background-color: var(--clr-4);
+    border: none;
     color: var(--clr-text-1);
-    outline: none;
     cursor: pointer;
+    display: flex;
+    font-size: 3rem;
+    height: 100%;
+    justify-content: center;
+    outline: none;
     transition: var(--transition-fast);
+    width: var(--header-height);
   }
 
   &__title {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: var(--clr-text-1);
-    padding: 0 1rem;
-    margin-left: 1rem;
     border-right: 1px solid var(--clr-text-3);
+    color: var(--clr-text-1);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-left: 1rem;
     margin-right: 2rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
   }
 
   &__file-form {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 
   &__file-icon {
@@ -50,21 +50,21 @@
 
   &__file-container {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
   }
 
   &__file-label {
-    font-size: 0.8rem;
     color: var(--clr-text-3);
+    font-size: 0.8rem;
   }
 
   &__file-input {
-    border: none;
-    outline: none;
     background-color: transparent;
+    border: none;
     color: var(--clr-text-1);
     font-size: 1.05rem;
+    outline: none;
 
     &:focus {
       border-bottom: 1px solid var(--clr-text-3);
@@ -76,17 +76,17 @@
   }
 
   &__right-content {
-    display: flex;
     align-items: center;
+    display: flex;
     height: 100%;
   }
 
   &__delete-icon {
-    font-size: 1.5rem;
     color: var(--clr-text-1);
+    cursor: pointer;
+    font-size: 1.5rem;
     margin-right: 1rem;
     transition: var(--transition-fast);
-    cursor: pointer;
 
     &:hover {
       color: var(--clr-danger-1);
@@ -95,17 +95,17 @@
   }
 
   &__save-button {
-    display: flex;
     align-items: center;
-    font-size: 1.05rem;
-    color: var(--clr-text-1);
     background-color: var(--clr-accent-1);
-    padding: 0.5rem 0.8rem;
     border-radius: 0.3rem;
     border: none;
-    outline: none;
+    color: var(--clr-text-1);
     cursor: pointer;
+    display: flex;
+    font-size: 1.05rem;
     margin-right: 1rem;
+    outline: none;
+    padding: 0.5rem 0.8rem;
     transition: var(--transition-fast);
 
     &:hover {
